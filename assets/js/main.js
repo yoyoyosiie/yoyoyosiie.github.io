@@ -1,15 +1,3 @@
-// Project filter on the home page
-document.querySelectorAll("[data-filters]").forEach((bar) => {
-  const cards = document.querySelectorAll("[data-tags]");
-  bar.addEventListener("click", (e) => {
-    const btn = e.target.closest("button");
-    if (!btn) return;
-    bar.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", b === btn));
-    const f = btn.dataset.filter;
-    cards.forEach((c) => (c.hidden = f !== "all" && !c.dataset.tags.split(" ").includes(f)));
-  });
-});
-
 // Click any gallery image to enlarge it
 const box = document.createElement("dialog");
 box.className = "lightbox";
