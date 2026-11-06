@@ -25,11 +25,11 @@
         <a class="back" href="../#projects">← All projects</a>
         <p class="eyebrow" style="margin-top:20px">CNC · CAM · DFM</p>
         <h1 style="margin:0 0 12px">CNC Design &amp; Production</h1>
-        <p class="lede muted" style="max-width:680px;margin:0">Since 2021 I've worked at SK Grimes, a small shop that does specialized camera repair and modification. I design custom parts in SolidWorks, program them in CAMWorks, and cut them on a 3-axis mill and CO2 and fiber lasers. Here are some of those parts and the process decisions behind them.</p>
+        <p class="lede muted" style="max-width:680px;margin:0">Since 2021 I've worked at SK Grimes, a small shop that does specialized camera repair and modification. I design custom parts in SolidWorks, program them in CAMWorks, and cut them on a 3-axis mill and CO2 and fiber lasers. Below are three jobs and the workholding behind them.</p>
         <dl class="specs">
           <div><dt>Machines</dt><dd>3-axis mill · CO2 &amp; fiber laser</dd></div>
           <div><dt>CAD / CAM</dt><dd>SolidWorks · CAMWorks</dd></div>
-          <div><dt>Materials</dt><dd>Edit: Al, steel, plastics</dd></div>
+          <div><dt>Workholding</dt><dd>Soft jaws · vacuum · fixture plates</dd></div>
           <div><dt>Where</dt><dd>SK Grimes, 2021–present</dd></div>
         </dl>
       </div>
@@ -38,32 +38,44 @@
     <section>
       <div class="wrap">
         <div class="prose">
-          <p class="todo">Check that you're allowed to show employer parts. Photos of generic features, fixtures, or your own side projects are usually fine. Customer part geometry and drawings usually aren't.</p>
-          <p>For each part: what it is, what made it hard (thin walls, tolerances, workholding, finish), and what you changed to make it manufacturable. One number per part (cycle time, setups removed, scrap rate) goes a long way with hiring managers.</p>
+          <p>A lot of the work here comes down to workholding: how to hold the part for each operation so it comes off the machine finished, repeatable, and without hand rework. These three jobs show the range, from a small two-operation part to fixtures I built for the shop.</p>
         </div>
 
-        <h3>Part 1: name</h3>
-        <p class="todo">Short description and the one interesting decision.</p>
+        <h3>Two-operation part with soft jaws</h3>
+        <div class="prose">
+          <p>A small aluminum part machined in two operations. Op 1 cuts the top side in standard jaws. For op 2 I machined soft jaws with pockets matching the part profile, so each part drops in flipped and located, and the back side can be finished without re-indicating.</p>
+          <p class="todo">Add material, quantity, the tightest tolerance, and anything that made it tricky (thin web, thread, feature-to-feature position).</p>
+        </div>
         <div class="gallery">
-          <figure><img src="../assets/img/placeholder.svg" alt="Part 1 CAM toolpath"><figcaption>Toolpath</figcaption></figure>
-          <figure><img src="../assets/img/placeholder.svg" alt="Part 1 fixture"><figcaption>Fixture</figcaption></figure>
-          <figure><img src="../assets/img/placeholder.svg" alt="Part 1 finished"><figcaption>Finished part</figcaption></figure>
+          <figure><img src="../assets/img/cnc/2op-op1.jpg" alt="Four parts after the first operation, held in vise jaws"><figcaption>Op 1: top side</figcaption></figure>
+          <figure><img src="../assets/img/cnc/2op-softjaws.jpg" alt="Aluminum soft jaws with pockets machined to the part profile"><figcaption>Soft jaws cut to the part profile</figcaption></figure>
+          <figure><img src="../assets/img/cnc/2op-op2.jpg" alt="Parts seated flipped in the soft jaws for the second operation"><figcaption>Op 2: parts seated in the soft jaws</figcaption></figure>
+          <figure><img src="../assets/img/cnc/2op-finished.jpg" alt="Finished parts next to a pen for scale"><figcaption>Finished parts (pen for scale)</figcaption></figure>
         </div>
 
-        <h3>Part 2: name</h3>
-        <p class="todo">Short description and the one interesting decision.</p>
-        <div class="gallery">
-          <figure><img src="../assets/img/placeholder.svg" alt="Part 2"><figcaption>Caption</figcaption></figure>
-          <figure><img src="../assets/img/placeholder.svg" alt="Part 2"><figcaption>Caption</figcaption></figure>
+        <h3>Vacuum fixture for large-format lensboards</h3>
+        <div class="prose">
+          <p>A machined vacuum fixture for making lensboards for a large-format press camera (shown in the background). Both operations run on the one fixture. There are separate O-ring-sealed stations for op 1 and op 2, so a full batch of boards goes through both sides with no clamps marking the faces.</p>
+          <p class="todo">Add batch size per run, how vacuum hold was checked (cut forces vs. holding force), and how long one cycle takes.</p>
+        </div>
+        <div class="gallery feature">
+          <figure><img src="../assets/img/cnc/vacuum-fixture.jpg" alt="Aluminum vacuum fixture holding a grid of lensboards, with a large-format camera behind it"><figcaption>Op 1 and op 2 stations on one vacuum plate</figcaption></figure>
         </div>
 
+        <h3>60 × 30 in fixture table and tabbed plates</h3>
+        <div class="prose">
+          <p>I built a 60 × 30 in fixture table for the mill: a tapped-hole grid plate that clamps take straight down onto. Here it's holding stock for a set of prototype plates. I left tabs between the plates so the whole sheet stays one piece while it's machined, which keeps the parts from shifting or flying loose on the final contour. Afterward the plates break out and the tabs get cleaned up.</p>
+          <p class="todo">Add the hole grid pitch and thread, how you kept it flat across 60 in, and tab size and how you remove them.</p>
+        </div>
+        <div class="gallery feature tall">
+          <figure><img src="../assets/img/cnc/fixture-table-tabs.jpg" alt="Large fixture table with clamps holding a sheet of pocketed plates connected by tabs"><figcaption>Prototype plates held together by tabs</figcaption></figure>
+        </div>
+
+        <!-- Machining video: upload to YouTube and paste the ID, or add a short MP4 to assets/video/ (see README).
         <h3>On the machine</h3>
-        <!-- Short machining clip, compressed to under ~20 MB. See README for the ffmpeg command. -->
         <div class="media">
-          <video controls muted playsinline preload="metadata" poster="../assets/img/placeholder.svg">
-            <source src="../assets/video/cnc-run.mp4" type="video/mp4">
-          </video>
-        </div>
+          <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Machining video" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div> -->
       </div>
     </section>
   </main>
