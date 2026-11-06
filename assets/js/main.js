@@ -26,7 +26,26 @@ document.querySelectorAll(".compare").forEach((c) => {
 
 // 3D model switcher: buttons swap which GLB the viewer shows
 document.querySelectorAll("[data-model-switch]").forEach((bar) => {
-  const mv = bar.nextElementSibling;
+  const mv = bar.parentElement.querySelector("model-viewer");
+  const toggle = bar.parentElement.querySelector("[data-scan-toggle]");
+  const box = toggle && toggle.querySelector("input");
+
+  // Scans are translucent materials named scan_*; hiding = alpha 0
+  const scanAlpha = new Map();
+  const applyScans = () => {
+    if (!mv.model) return;
+    mv.model.materials.forEach((m) => {
+      if (!m.name.startsWith("scan_")) return;
+      const c = m.pbrMetallicRoughness.baseColorFactor;
+      if (!scanAlpha.has(m.name)) scanAlpha.set(m.name, c[3]);
+      m.pbrMetallicRoughness.setBaseColorFactor([c[0], c[1], c[2], box.checked ? scanAlpha.get(m.name) : 0]);
+    });
+  };
+  if (box) {
+    box.addEventListener("change", applyScans);
+    mv.addEventListener("load", applyScans);
+  }
+
   bar.addEventListener("click", (e) => {
     const btn = e.target.closest("button");
     if (!btn) return;
@@ -34,23 +53,8 @@ document.querySelectorAll("[data-model-switch]").forEach((bar) => {
     mv.src = btn.dataset.src;
     mv.cameraOrbit = btn.dataset.orbit;
     mv.alt = btn.textContent + " 3D model";
+    if (toggle) toggle.hidden = !("scans" in btn.dataset);
   });
-});
-
-// Dark/light toggle (dark is the default; the choice is remembered)
-document.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
-  const root = document.documentElement;
-  const sync = () => {
-    const light = root.dataset.theme === "light";
-    btn.textContent = light ? "☾" : "☀";
-    btn.setAttribute("aria-label", light ? "Switch to dark theme" : "Switch to light theme");
-  };
-  btn.addEventListener("click", () => {
-    if (root.dataset.theme === "light") delete root.dataset.theme; else root.dataset.theme = "light";
-    try { localStorage.setItem("theme", root.dataset.theme || "dark"); } catch (e) {}
-    sync();
-  });
-  sync();
 });
 
 document.querySelectorAll("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));

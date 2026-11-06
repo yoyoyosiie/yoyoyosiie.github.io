@@ -57,16 +57,17 @@
         </div>
 
         <div class="filters" data-model-switch>
-          <button aria-pressed="true" data-src="../assets/models/ar5-assembly.glb" data-orbit="45deg 70deg auto">Full assembly</button>
+          <button aria-pressed="true" data-src="../assets/models/ar5-assembly.glb" data-orbit="35deg 72deg auto" data-scans>Full assembly</button>
           <button aria-pressed="false" data-src="../assets/models/1uz-ar5-adapter-plate.glb" data-orbit="70deg 80deg auto">Front adapter plate</button>
           <button aria-pressed="false" data-src="../assets/models/ar5-2wd-backplate.glb" data-orbit="-70deg 80deg auto">4WD→2WD backplate</button>
         </div>
+        <label class="scan-toggle" data-scan-toggle><input type="checkbox" checked> Show transmission scans</label>
         <model-viewer id="ar5-viewer" src="../assets/models/ar5-assembly.glb"
           alt="3D model of the AR5 adapter assembly: front adapter plate, 2WD backplate and shifter mount"
           camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="3000" rotation-per-second="12deg"
           shadow-intensity="1" exposure="0.95" environment-image="neutral" interaction-prompt="none"
-          camera-orbit="45deg 70deg auto"></model-viewer>
-        <p class="viewer-hint">Drag to rotate, scroll or pinch to zoom. These are the Fusion models, without the transmission scans.</p>
+          camera-orbit="35deg 72deg auto"></model-viewer>
+        <p class="viewer-hint">Drag to rotate, scroll or pinch to zoom. The see-through shapes are my 3D scans of the AR5 (tan) and the original A340E bellhousing (green). I designed the parts around them.</p>
 
         <h3>Front adapter plate</h3>
         <div class="prose">
