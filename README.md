@@ -20,11 +20,10 @@ Search for `class="todo"` to find every placeholder that still needs content.
 
 **Photos:** resize to about 1600 px on the long side and save as JPG at ~80% quality. That usually comes out to 200–500 KB. Put them in `assets/img/<project>/`, then change the `src` in the matching `<figure>`.
 
-**3D models:** export as GLB and keep each file under ~10 MB.
-- Fusion: File → Export → type *GLB*. Or use *OBJ/STL* and convert.
-- SolidWorks: Save As → *glTF/GLB* (2022+). Older versions: Save As *STL*, then convert at https://products.aspose.app/3d/conversion/stl-to-glb or with Blender.
-- Drop the file in `assets/models/` and change `src` on the `<model-viewer>` tag. `example-adapter-plate.glb` is demo geometry only, so delete it once yours is in.
-- Strip anything proprietary (customer geometry, internal part numbers) before exporting.
+**3D models:** the viewer needs GLB. Fusion and SolidWorks can't export it cleanly, so:
+- Export **STEP** from Fusion (File → Export → STEP) or SolidWorks, and convert it to GLB. Claude can do the conversion, or use https://products.aspose.app/3d/conversion/step-to-glb or FreeCAD.
+- Keep each GLB under ~10 MB. Leave out scan meshes and anything proprietary.
+- Put it in `assets/models/` and add a button for it in the `data-model-switch` bar on the project page.
 
 **Videos:**
 - Long videos: upload to YouTube (Unlisted is fine). Copy the ID from the URL (`youtube.com/watch?v=THIS_PART`) and paste it in place of `VIDEO_ID`.

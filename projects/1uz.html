@@ -51,12 +51,17 @@
           <p class="todo">Add why you picked the AR5 over other options and the main constraints you had to hit: input shaft engagement, pilot bearing, clutch clearance, crossmember, and driveshaft length.</p>
         </div>
 
-        <model-viewer src="../assets/models/example-adapter-plate.glb"
-          alt="3D model of the front adapter plate"
-          camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="0" rotation-per-second="18deg"
-          shadow-intensity="1" exposure="1.1" environment-image="neutral"
-          camera-orbit="30deg 65deg auto"></model-viewer>
-        <p class="viewer-hint">Drag to rotate, scroll or pinch to zoom. <strong>This is example geometry.</strong> Swap in your GLB export.</p>
+        <div class="filters" data-model-switch>
+          <button aria-pressed="true" data-src="../assets/models/ar5-assembly.glb" data-orbit="45deg 70deg auto">Full assembly</button>
+          <button aria-pressed="false" data-src="../assets/models/1uz-ar5-adapter-plate.glb" data-orbit="70deg 80deg auto">Front adapter plate</button>
+          <button aria-pressed="false" data-src="../assets/models/ar5-2wd-backplate.glb" data-orbit="-70deg 80deg auto">4WD→2WD backplate</button>
+        </div>
+        <model-viewer id="ar5-viewer" src="../assets/models/ar5-assembly.glb"
+          alt="3D model of the AR5 adapter assembly: front adapter plate, 2WD backplate and shifter mount"
+          camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="3000" rotation-per-second="12deg"
+          shadow-intensity="1" exposure="0.95" environment-image="neutral" interaction-prompt="none"
+          camera-orbit="45deg 70deg auto"></model-viewer>
+        <p class="viewer-hint">Drag to rotate, scroll or pinch to zoom. These are the Fusion models, without the transmission scans.</p>
 
         <h3>Front adapter plate</h3>
         <div class="prose">
