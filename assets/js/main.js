@@ -37,4 +37,20 @@ document.querySelectorAll("[data-model-switch]").forEach((bar) => {
   });
 });
 
+// Dark/light toggle (dark is the default; the choice is remembered)
+document.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
+  const root = document.documentElement;
+  const sync = () => {
+    const light = root.dataset.theme === "light";
+    btn.textContent = light ? "☾" : "☀";
+    btn.setAttribute("aria-label", light ? "Switch to dark theme" : "Switch to light theme");
+  };
+  btn.addEventListener("click", () => {
+    if (root.dataset.theme === "light") delete root.dataset.theme; else root.dataset.theme = "light";
+    try { localStorage.setItem("theme", root.dataset.theme || "dark"); } catch (e) {}
+    sync();
+  });
+  sync();
+});
+
 document.querySelectorAll("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
