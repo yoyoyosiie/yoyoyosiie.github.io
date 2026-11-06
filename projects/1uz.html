@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>1UZ Project · Josie</title>
-  <meta name="description" content="1UZ swap: AR5 manual transmission adapter, electric fan conversion, and Arduino CAN digital dash.">
+  <title>1UZ Project · Josie Higgins</title>
+  <meta name="description" content="Lexus SC400 (1UZ-FE) manual swap: AR5 manual transmission adapter, electric fan conversion, and Arduino CAN digital dash.">
   <link rel="stylesheet" href="../assets/css/style.css">
   <!-- 3D viewer. Docs: https://modelviewer.dev -->
   <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
@@ -27,10 +27,11 @@
         <a class="back" href="../#projects">← All projects</a>
         <p class="eyebrow" style="margin-top:20px">Automotive · CAD · CNC · Electronics</p>
         <h1 style="margin:0 0 12px">1UZ Project</h1>
-        <p class="lede muted" style="max-width:680px;margin:0">A 1UZ-FE V8 swap. I designed and machined the parts needed to mate it to an AR5 manual transmission, converted it to an electric fan, and built my own CAN-bus digital dash.</p>
+        <p class="lede muted" style="max-width:680px;margin:0">My 1993 Lexus SC400 keeps its 1UZ-FE V8, but the factory A340E automatic is coming out for an Aisin AR5 five-speed manual from a GMC Canyon. I scanned both transmissions, designed the adapter parts around the scans in Fusion, and am checking the fit with 3D-printed prototypes. The car is also getting an electric fan conversion and an ESP32-based CAN-bus digital dash I programmed and built.</p>
         <dl class="specs">
-          <div><dt>Role</dt><dd>Design, CAM, machining</dd></div>
-          <div><dt>Tools</dt><dd>SolidWorks · Fusion CAM · Arduino</dd></div>
+          <div><dt>Role</dt><dd>Scanning, design, prototyping</dd></div>
+          <div><dt>Vehicle</dt><dd>Lexus SC400 · 1UZ-FE</dd></div>
+          <div><dt>Tools</dt><dd>Fusion · 3D scanning · 3D printing · ESP32</dd></div>
           <div><dt>Material</dt><dd>6061-T6 (edit)</dd></div>
           <div><dt>Status</dt><dd>In progress (edit)</dd></div>
         </dl>
@@ -46,7 +47,8 @@
       <div class="wrap">
         <h2><span class="num">A</span>AR5 Manual Transmission Adapter</h2>
         <div class="prose">
-          <p class="todo">2–3 sentences on the problem: why the AR5, what doesn't line up between the 1UZ bellhousing and the AR5, and your constraints (input shaft depth, pilot bearing, clutch clearance, crossmember).</p>
+          <p>No manual transmission was ever offered behind the 1UZ in the SC400, so nothing bolts up. The AR5 comes from a GMC Canyon, which means a different bellhousing pattern, input shaft length, and shifter location, plus a 4WD tail housing the SC400 can't use. I 3D-scanned the AR5 and the original A340E and built the assembly around the scans.</p>
+          <p class="todo">Add why you picked the AR5 over other options and the main constraints you had to hit: input shaft engagement, pilot bearing, clutch clearance, crossmember, and driveshaft length.</p>
         </div>
 
         <model-viewer src="../assets/models/example-adapter-plate.glb"
@@ -61,9 +63,10 @@
           <p class="todo">Design approach, how you located the bolt patterns (measured, OEM drawings, scanned), tolerances on the dowel and bore, plate thickness and why, and FEA if you did any.</p>
         </div>
         <div class="gallery">
-          <figure><img src="../assets/img/placeholder.svg" alt="Front plate CAD"><figcaption>CAD model</figcaption></figure>
-          <figure><img src="../assets/img/placeholder.svg" alt="Front plate on the machine"><figcaption>On the machine</figcaption></figure>
-          <figure><img src="../assets/img/placeholder.svg" alt="Front plate installed"><figcaption>Test fit</figcaption></figure>
+          <figure><img src="../assets/img/1uz/ar5-fusion-assembly.jpg" alt="Fusion assembly: AR5 scan with adapter plate, rear backplate and shifter mount"><figcaption>Fusion assembly built on the AR5 and A340E scans</figcaption></figure>
+          <figure><img src="../assets/img/1uz/clutch-flywheel.jpg" alt="1UZ rear face with flywheel and clutch installed"><figcaption>1UZ with flywheel and clutch fitted</figcaption></figure>
+          <figure><img src="../assets/img/1uz/engine-pull.jpg" alt="1UZ and automatic transmission pulled from the SC400 on an engine hoist"><figcaption>Engine and A340E out of the SC400</figcaption></figure>
+          <figure><img src="../assets/img/placeholder.svg" alt="Front plate on the machine"><figcaption>On the machine (add photo)</figcaption></figure>
         </div>
 
         <h3>4WD to 2WD conversion backplate</h3>
@@ -104,9 +107,10 @@
 
     <section id="digidash">
       <div class="wrap">
-        <h2><span class="num">C</span>Arduino-Based CAN DigiDash</h2>
+        <h2><span class="num">C</span>ESP32 CAN DigiDash</h2>
         <div class="prose">
-          <p class="todo">Hardware (board, CAN transceiver, display), which messages you read and how you decoded them, refresh rate, and the enclosure.</p>
+          <p>An Arduino-framework ESP32 that reads the car's CAN bus and drives a digital gauge display.</p>
+          <p class="todo">Hardware (CAN transceiver, display), which messages you read and how you decoded them, refresh rate, and the enclosure.</p>
         </div>
         <!-- Video: paste your YouTube video ID in place of VIDEO_ID (use youtube-nocookie.com so YouTube doesn't set cookies until someone hits play) -->
         <div class="media">
@@ -126,7 +130,7 @@
   <footer>
     <div class="wrap">
       <a href="../#projects">← Back to all projects</a>
-      <span>© <span data-year></span> Josie</span>
+      <span>© <span data-year></span> Josie Higgins</span>
     </div>
   </footer>
   <script src="../assets/js/main.js"></script>
