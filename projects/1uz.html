@@ -61,7 +61,7 @@
           <button aria-pressed="false" data-src="../assets/models/1uz-ar5-adapter-plate.glb" data-orbit="70deg 80deg auto">Front adapter plate</button>
           <button aria-pressed="false" data-src="../assets/models/ar5-2wd-backplate.glb" data-orbit="-70deg 80deg auto">4WD→2WD backplate</button>
         </div>
-        <label class="scan-toggle" data-scan-toggle><input type="checkbox" checked> Show transmission scans</label>
+        <label class="scan-toggle" data-scan-toggle="ar5-viewer"><input type="checkbox" checked> Show transmission scans</label>
         <model-viewer id="ar5-viewer" src="../assets/models/ar5-assembly.glb"
           alt="3D model of the AR5 adapter assembly: front adapter plate, 2WD backplate and shifter mount"
           camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="3000" rotation-per-second="12deg"
@@ -109,6 +109,13 @@
         <div class="prose">
           <p class="todo">Why you dropped the mechanical fan, how you sized the fan (CFM, current draw), how it's controlled (thermo switch, relay, PWM from the Arduino?), and the shroud or bracket you made.</p>
         </div>
+        <label class="scan-toggle" data-scan-toggle="efan-viewer"><input type="checkbox" checked> Show radiator scan</label>
+        <model-viewer id="efan-viewer" src="../assets/models/efan-radiator.glb"
+          alt="3D model of the twin electric fan shroud mounted on a 3D scan of the radiator"
+          camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="3000" rotation-per-second="12deg"
+          shadow-intensity="1" exposure="0.95" environment-image="neutral" interaction-prompt="none"
+          camera-orbit="55deg 75deg auto"></model-viewer>
+        <p class="viewer-hint">The twin-fan shroud from Fusion, shown on my 3D scan of the radiator.</p>
         <div class="gallery">
           <figure><img src="../assets/img/placeholder.svg" alt="Fan shroud"><figcaption>Shroud / bracket</figcaption></figure>
           <figure><img src="../assets/img/placeholder.svg" alt="Wiring"><figcaption>Wiring</figcaption></figure>

@@ -24,28 +24,28 @@ document.querySelectorAll(".compare").forEach((c) => {
   set();
 });
 
-// 3D model switcher: buttons swap which GLB the viewer shows
-document.querySelectorAll("[data-model-switch]").forEach((bar) => {
-  const mv = bar.parentElement.querySelector("model-viewer");
-  const toggle = bar.parentElement.querySelector("[data-scan-toggle]");
-  const box = toggle && toggle.querySelector("input");
-
-  // Scans are translucent materials named scan_*; hiding = alpha 0
-  const scanAlpha = new Map();
-  const applyScans = () => {
+// Scan show/hide: scans are translucent materials named scan_*; hiding sets alpha to 0
+document.querySelectorAll("[data-scan-toggle]").forEach((toggle) => {
+  const mv = document.getElementById(toggle.dataset.scanToggle);
+  const box = toggle.querySelector("input");
+  const alpha = new Map();
+  const apply = () => {
     if (!mv.model) return;
     mv.model.materials.forEach((m) => {
       if (!m.name.startsWith("scan_")) return;
       const c = m.pbrMetallicRoughness.baseColorFactor;
-      if (!scanAlpha.has(m.name)) scanAlpha.set(m.name, c[3]);
-      m.pbrMetallicRoughness.setBaseColorFactor([c[0], c[1], c[2], box.checked ? scanAlpha.get(m.name) : 0]);
+      if (!alpha.has(m.name)) alpha.set(m.name, c[3]);
+      m.pbrMetallicRoughness.setBaseColorFactor([c[0], c[1], c[2], box.checked ? alpha.get(m.name) : 0]);
     });
   };
-  if (box) {
-    box.addEventListener("change", applyScans);
-    mv.addEventListener("load", applyScans);
-  }
+  box.addEventListener("change", apply);
+  mv.addEventListener("load", apply);
+});
 
+// 3D model switcher: buttons swap which GLB the viewer shows
+document.querySelectorAll("[data-model-switch]").forEach((bar) => {
+  const mv = bar.parentElement.querySelector("model-viewer");
+  const toggle = document.querySelector(`[data-scan-toggle="${mv.id}"]`);
   bar.addEventListener("click", (e) => {
     const btn = e.target.closest("button");
     if (!btn) return;
