@@ -24,6 +24,7 @@ Search for `class="todo"` to find every placeholder that still needs content.
 - Export **STEP** from Fusion (File → Export → STEP) or SolidWorks, and convert it to GLB. Claude can do the conversion, or use https://products.aspose.app/3d/conversion/step-to-glb or FreeCAD.
 - Keep each GLB under ~10 MB. Leave out scan meshes and anything proprietary.
 - Put it in `assets/models/` and add a button for it in the `data-model-switch` bar on the project page.
+- When you replace a model, bump the `?v=` number in its `src` so browsers don't keep showing the cached old file.
 
 **Videos:**
 - Long videos: upload to YouTube (Unlisted is fine). Copy the ID from the URL (`youtube.com/watch?v=THIS_PART`) and paste it in place of `VIDEO_ID`.
