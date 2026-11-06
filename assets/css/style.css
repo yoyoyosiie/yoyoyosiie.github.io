@@ -126,6 +126,11 @@ h3 { font-size: 20px; margin: 32px 0 8px; }
 .gallery figure { margin: 0; }
 .gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); cursor: zoom-in; background: var(--surface); }
 .gallery figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
+/* A single large photo instead of a thumbnail grid */
+.gallery.feature { grid-template-columns: minmax(0, 860px); }
+.gallery.feature img { aspect-ratio: 4 / 3; }
+.gallery.feature.tall { grid-template-columns: minmax(0, 560px); }
+.gallery.feature.tall img { aspect-ratio: 3 / 4; }
 .lightbox { border: 0; padding: 0; background: transparent; max-width: 94vw; max-height: 94vh; }
 .lightbox::backdrop { background: rgba(0, 0, 0, .85); }
 .lightbox img { max-width: 94vw; max-height: 86vh; object-fit: contain; margin: 0 auto; }
