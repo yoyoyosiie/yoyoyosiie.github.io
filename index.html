@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Josie · Mechanical Engineering Portfolio</title>
+  <meta name="description" content="Mechanical engineering and CNC portfolio: drivetrain adapters, Arduino CAN dash, CNC production work, and a Japanese technical dictionary.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./">josie<span>.</span>eng</a>
+      <nav class="nav">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Mechanical Engineering · Japanese · CNC</p>
+        <h1>I design parts and then make them.</h1>
+        <p class="lede">Mechanical engineering and Japanese senior, working as a CNC programmer and designer. I take parts from CAD and FEA through to finished, machined hardware.</p>
+        <ul class="tags">
+          <li class="tag">SolidWorks</li><li class="tag">Fusion</li><li class="tag">FEA</li>
+          <li class="tag">CNC / CAM</li><li class="tag">DFM</li><li class="tag">Arduino</li><li class="tag">日本語 (JLPT N3)</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn" href="#projects">See projects</a>
+          <a class="btn ghost" href="assets/resume.pdf">Résumé (PDF)</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <h2><span class="num">01</span>Projects</h2>
+        <p class="muted">Click a project for photos, video, and CAD you can rotate in the browser.</p>
+        <div class="filters" data-filters>
+          <button data-filter="all" aria-pressed="true">All</button>
+          <button data-filter="cad" aria-pressed="false">CAD</button>
+          <button data-filter="cnc" aria-pressed="false">CNC</button>
+          <button data-filter="electronics" aria-pressed="false">Electronics</button>
+          <button data-filter="automotive" aria-pressed="false">Automotive</button>
+          <button data-filter="software" aria-pressed="false">Software</button>
+          <button data-filter="japanese" aria-pressed="false">Japanese</button>
+        </div>
+
+        <div class="grid">
+          <a class="card" href="projects/1uz.html" data-tags="cad cnc automotive electronics">
+            <img class="thumb" src="assets/img/placeholder.svg" alt="1UZ swap project">
+            <div class="body">
+              <h3>1UZ Project</h3>
+              <p>Engine swap work: an AR5 manual transmission adapter, an electric fan conversion, and an Arduino CAN digital dash.</p>
+              <ul class="tags"><li class="tag">SolidWorks</li><li class="tag">CNC</li><li class="tag">Arduino</li><li class="tag">CAN bus</li></ul>
+            </div>
+          </a>
+
+          <a class="card" href="projects/cnc.html" data-tags="cnc cad">
+            <img class="thumb" src="assets/img/placeholder.svg" alt="CNC production work">
+            <div class="body">
+              <h3>CNC Design &amp; Production</h3>
+              <p>Parts I've designed, programmed, and machined, from one-off prototypes to production runs.</p>
+              <ul class="tags"><li class="tag">CAM</li><li class="tag">DFM</li><li class="tag">Fixturing</li></ul>
+            </div>
+          </a>
+
+          <a class="card" href="projects/joshi-no-jisho.html" data-tags="software japanese">
+            <img class="thumb" style="object-position:top" src="assets/img/jisho/anki-card-reference-front.png" alt="Joshi's Jisho Anki card">
+            <div class="body">
+              <h3>Joshi's Jisho ジョシの辞書</h3>
+              <p>A Japanese–English dictionary of engineering terms pulled from machining patents, with search and Anki export.</p>
+              <ul class="tags"><li class="tag">Python</li><li class="tag">Astro</li><li class="tag">日本語</li></ul>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <h2><span class="num">02</span>Experience</h2>
+        <ul class="timeline">
+          <li>
+            <div class="when">20XX – present</div>
+            <h3>CNC Programmer &amp; Designer · <span class="muted">Company name</span></h3>
+            <p class="todo">Add 2–3 bullet points: machines and controls, CAM software, what you own (programming, fixtures, first-article inspection), and one number (parts/month, cycle time saved, scrap reduced).</p>
+          </li>
+          <li>
+            <div class="when">20XX – 20XX</div>
+            <h3>B.S. Mechanical Engineering + Japanese · <span class="muted">University name</span></h3>
+            <p class="todo">Expected graduation date, relevant coursework, and any design team or study abroad.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <h2><span class="num">03</span>Contact</h2>
+        <p>Open to full-time mechanical design and manufacturing roles, including positions that use Japanese.</p>
+        <div class="btn-row">
+          <a class="btn" href="mailto:you@example.com">Email me</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
+          <a class="btn ghost" href="https://github.com/yoyoyosiie">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span data-year></span> Josie</span>
+      <span class="mono">Built with plain HTML · hosted on GitHub Pages</span>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

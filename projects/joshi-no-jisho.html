@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joshi's Jisho · Josie</title>
+  <meta name="description" content="Joshi's Jisho: a Japanese–English dictionary of engineering terms with search and Anki export.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">josie<span>.</span>eng</a>
+      <nav class="nav">
+        <a href="../#projects" aria-current="page">Projects</a>
+        <a href="../#experience">Experience</a>
+        <a href="../#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="project-hero">
+      <div class="wrap">
+        <a class="back" href="../#projects">← All projects</a>
+        <p class="eyebrow" style="margin-top:20px">Software · Japanese</p>
+        <h1 style="margin:0 0 12px">Joshi's Jisho <span class="muted" style="font-weight:400">ジョシの辞書</span></h1>
+        <p class="lede muted" style="max-width:680px;margin:0">A Japanese–English dictionary of technical and engineering terms, built from real machining patents so the vocabulary matches what's actually used on the shop floor and in the spec sheets.</p>
+        <dl class="specs">
+          <div><dt>Terms</dt><dd>779 (draft)</dd></div>
+          <div><dt>Source</dt><dd>4 machining patents</dd></div>
+          <div><dt>Stack</dt><dd>Python · Astro · GitHub Actions</dd></div>
+          <div><dt>Export</dt><dd>Anki decks</dd></div>
+        </dl>
+        <div class="btn-row">
+          <a class="btn" href="https://yoyoyosiie.github.io/joshi_no_jisho/">Open the dictionary</a>
+          <a class="btn ghost" href="https://github.com/yoyoyosiie/joshi_no_jisho">Source on GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <div class="prose">
+          <h3 style="margin-top:0">Why I built it</h3>
+          <p class="todo">One paragraph in your own words: general dictionaries miss shop-floor and patent vocabulary, and you needed it for engineering work in Japanese.</p>
+
+          <h3>How it works</h3>
+          <ul>
+            <li>A patent vocabulary extractor pulls candidate terms from Japanese patent text.</li>
+            <li>Each term is stored as its own YAML file, checked against a JSON Schema by a validator that runs on every pull request.</li>
+            <li>A build script compiles the data into a searchable Astro site that matches kanji, kana, romaji, and English, with an EN/JA interface.</li>
+            <li>Study lists export straight to Anki.</li>
+          </ul>
+        </div>
+
+        <h3>Anki cards</h3>
+        <div class="gallery">
+          <figure><img src="../assets/img/jisho/anki-card-reference-front.png" alt="Anki card front"><figcaption>Card front</figcaption></figure>
+          <figure><img src="../assets/img/jisho/anki-card-reference-back.png" alt="Anki card back"><figcaption>Card back</figcaption></figure>
+        </div>
+        <p class="todo">Add a screenshot of the search page once the dictionary site is live.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a href="../#projects">← Back to all projects</a>
+      <span>© <span data-year></span> Josie</span>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
