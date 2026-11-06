@@ -36,4 +36,17 @@ document.querySelectorAll(".compare").forEach((c) => {
   set();
 });
 
+// 3D model switcher: buttons swap which GLB the viewer shows
+document.querySelectorAll("[data-model-switch]").forEach((bar) => {
+  const mv = bar.nextElementSibling;
+  bar.addEventListener("click", (e) => {
+    const btn = e.target.closest("button");
+    if (!btn) return;
+    bar.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", b === btn));
+    mv.src = btn.dataset.src;
+    mv.cameraOrbit = btn.dataset.orbit;
+    mv.alt = btn.textContent + " 3D model";
+  });
+});
+
 document.querySelectorAll("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
